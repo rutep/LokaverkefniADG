@@ -4,36 +4,62 @@ param mEld:= 5.21;
 param gEld:= 3.04;
 
 # Áfangstaðir
-set afangS =: Boston Chicago Denver NewYork Orlando Seattle Tampa Washington Anchorage Baltimore Cleveland Dallas;
+set afangS := Boston Chicago Denver NewYork Orlando 
+			  Seattle Tampa Washington Anchorage Baltimore 
+			  Cleveland Dallas;
+			  
 # Áfangastaður, flugnúmer, eftirspurn, fjarlægð
-param Destination	Flightno  Demandpas	DistanceKm :=
-      Boston	    630	      156	      3871
-      Chicago	    852	      130	      4720
-      Denver	    670	      122	      5757
-      NewYork	    614	      188	      4161
-      Orlando	    688	      102	      5687
-      Seattle	    680	      164	      5799
-      Tampa	      	885	      98	      5789
-      Washington	644	      173	      4491
-      Anchorage	  	679	      100	      5414
-      Baltimore 	642	      189	      4425
-      Cleveland	  	836	      98	      4510
-      Dallas	    872	      232	      6009;
-  
+param: 				Flightno  Demandpas	  DistanceKm :=
+      	Boston	    630	      156	      3871
+      	Chicago	    852	      130	      4720
+      	Denver	    670	      122	      5757
+      	NewYork	    614	      188	      4161
+      	Orlando	    688	      102	      5687
+      	Seattle	    680	      164	      5799
+      	Tampa	    885	      98	      5789
+      	Washington	644	      173	      4491
+      	Anchorage	679	      100	      5414
+      	Baltimore 	642	      189	      4425
+      	Cleveland	836	      98	      4510
+      	Dallas	    872	      232	      6009 ;
+
 
 # Aircraft Type No of available aircrafts
-set aCraftType =: Boeing737MAX Boeing757-200 Boeing757-300 Boeing767-300; 
-param: 	Typo 			nrACraft :=
+set aCraftType := Boeing737MAX Boeing757-200 
+				  Boeing757-300 Boeing767-300; 
+				  
+param: 		 			nrAirCraft :=
   		Boeing737MAX  	2
   		Boeing757-200 	8
   		Boeing757-300 	2
   		Boeing767-300 	4;
  
+ 
 # Flugvélagerð Sætafjöldi per flugvél
-set velar =: Boeing737MAX Boeing757200 Boeing757300 Boeing767300
-param: 	craftType 		seats :=
+set velar := Boeing737MAX Boeing757200 Boeing757300 
+			 Boeing767300;
+param: 			 		seats :=
   		Boeing737MAX 	160
   		Boeing757200 	183
   		Boeing757300 	222
   		Boeing767300 	262;
+  		
+# Kostnaður á flug til Íslands
+set flugVerd := Anchorage Baltimore Boston Chicago 
+				Cleveland Dallas Denver NewYork 
+				Orlando Seattle Tampa Washington; 
+				   
+param:            kostn :=
+	Anchorage     400 
+	Baltimore     330 
+	Boston        290
+	Chicago       340
+	Cleveland     400 
+	Dallas        410 
+	Denver        380 
+	NewYork      300
+	Orlando       330
+	Seattle       410
+	Tampa         335 
+	Washington    310 ;
   

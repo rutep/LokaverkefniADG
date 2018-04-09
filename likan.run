@@ -1,0 +1,3 @@
+model likan.mod;
+data gogn.dat;
+reset;
