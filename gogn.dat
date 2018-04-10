@@ -1,15 +1,15 @@
-# Markaðsvirði eldsneytis á gallon
-param mEld:= 5.21;
+# Markaðsvirði eldsneytis á gallon í $
+param virdiEld:= 5.21;
 # Gallon af eldsneyti vegur
-param gEld:= 3.04;
+param gallEldVegur:= 3.04;
 
 # Áfangstaðir
-set afangS := Boston Chicago Denver NewYork Orlando 
-			  Seattle Tampa Washington Anchorage Baltimore 
-			  Cleveland Dallas;
+set flug := Boston Chicago Denver NewYork Orlando 
+			Seattle Tampa Washington Anchorage 
+			Baltimore Cleveland Dallas;
 			  
 # Áfangastaður, flugnúmer, eftirspurn, fjarlægð
-param: 				Flightno  Demandpas	  DistanceKm :=
+param: 				flugnr    eftirs	  fjarlkm :=
       	Boston	    630	      156	      3871
       	Chicago	    852	      130	      4720
       	Denver	    670	      122	      5757
@@ -24,25 +24,15 @@ param: 				Flightno  Demandpas	  DistanceKm :=
       	Dallas	    872	      232	      6009 ;
 
 
-# Aircraft Type No of available aircrafts
-set aCraftType := Boeing737MAX Boeing757-200 
-				  Boeing757-300 Boeing767-300; 
+# Tegund véla
+set velar := Boeing737MAX Boeing757-200 
+			 Boeing757-300 Boeing767-300; 
 				  
-param: 		 			nrAirCraft :=
-  		Boeing737MAX  	2
-  		Boeing757-200 	8
-  		Boeing757-300 	2
-  		Boeing767-300 	4;
- 
- 
-# Flugvélagerð Sætafjöldi per flugvél
-set velar := Boeing737MAX Boeing757200 Boeing757300 
-			 Boeing767300;
-param: 			 		seats :=
-  		Boeing737MAX 	160
-  		Boeing757200 	183
-  		Boeing757300 	222
-  		Boeing767300 	262;
+param: 		 			floti	    sæti :=
+  		Boeing737MAX  	2			160
+  		Boeing757-200 	8			183
+  		Boeing757-300 	2			222
+  		Boeing767-300 	4			262;
   		
 # Kostnaður á flug til Íslands
 set flugVerd := Anchorage Baltimore Boston Chicago 
@@ -57,7 +47,7 @@ param:            kostn :=
 	Cleveland     400 
 	Dallas        410 
 	Denver        380 
-	NewYork      300
+	NewYork       300
 	Orlando       330
 	Seattle       410
 	Tampa         335 

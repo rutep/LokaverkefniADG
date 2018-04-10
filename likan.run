@@ -1,3 +1,7 @@
 model likan.mod;
 data gogn.dat;
+solve;
+display velFlaug;
+display flugvelar;
+display sum {i in flug} sum {j in velar} velFlaug[i,j];
 reset;
