@@ -1,7 +1,7 @@
 # Markaðsvirði eldsneytis á gallon í $
 param virdiEld:= 5.21;
 # Gallon af eldsneyti vegur
-param gallEldVegur:= 3.04;
+param gallonVegur:= 3.04;
 
 # Áfangstaðir
 set flug := Boston Chicago Denver NewYork Orlando 

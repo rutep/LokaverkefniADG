@@ -2,10 +2,6 @@ reset;
 option solver cplex;
 model likan.mod;
 data gogn.dat;
-option solver cplex;
 solve;
 display velFlaug;
-
-display sum {i in flug} sum {j in velar} velFlaug[i,j];
-display floti['Boeing737MAX'];
 reset;
