@@ -14,6 +14,8 @@ param gallEldVegur; # Gallon af eldsneyti vegur
 set velar;
 param floti{velar} >= 0;
 param sæti{velar};
+param fuel{velar};
+param range{velar};
 
 # Kostnaður á flugi
 set flugVerd;
@@ -24,13 +26,19 @@ var velFlaug {flug,velar} binary;
 
 # Markfall
 minimize mestiSparnaður: sum {i in flug, j in velar} 
-	virdiEld * gallEldVegur * velFlaug[i,j] * fjarlkm[i];
+	virdiEld  * velFlaug[i,j] * (fjarlkm[i] * fuel[j])/gallEldVegur ;
 
 subject to eftirspurn {i in flug, j in velar}:
-	eftirs[i] <= sæti[j] * velFlaug[i,j];
+	eftirs[i] * velFlaug[i,j] <= sæti[j];
+		
+subject to dreifFlug {i in flug, j in velar}:
+	velFlaug[i,j] * fjarlkm[i] <= range[j];
 	
-subject to flugvelar {j in velar}:
+subject to flaugVel {j in velar}:
 	sum {i in flug} velFlaug[i,j] <= floti[j];
+	
+subject to fljugaAf {i in flug}:
+	sum {j in velar} velFlaug[i,j] == 1;
 	
 
 

@@ -25,14 +25,28 @@ param: 				flugnr    eftirs	  fjarlkm :=
 
 
 # Tegund véla
-set velar := Boeing737MAX Boeing757-200 
-			 Boeing757-300 Boeing767-300; 
+set velar := Boeing737MAX_1	Boeing737MAX_2 Boeing757-200_1 Boeing757-200_2
+			 Boeing757-200_3 Boeing757-200_4 Boeing757-200_5 Boeing757-200_6
+			 Boeing757-200_7 Boeing757-200_8 Boeing757-300_1 Boeing757-300_2
+			 Boeing767-300_1 Boeing767-300_2 Boeing767-300_3 Boeing767-300_4; 
 				  
-param: 		 			floti	    sæti	range	fuel  :=
-  		Boeing737MAX  	2			160		5110	3.39
-  		Boeing757-200 	8			183		5777	4.68
-  		Boeing757-300 	2			222		6290	5.19
-  		Boeing767-300 	4			262	11090	5.87;
+param: 		 				floti	    sæti 	range	fuel :=
+  		Boeing737MAX_1  	1			160		5110	3.39
+  		Boeing737MAX_2  	1			160		5110	3.39
+  		Boeing757-200_1		1			183		5777	4.68	
+   		Boeing757-200_2		1			183		5777	4.68
+  		Boeing757-200_3		1			183		5777	4.68
+  		Boeing757-200_4		1			183		5777	4.68
+  		Boeing757-200_5		1			183		5777	4.68
+  		Boeing757-200_6		1			183		5777	4.68
+  		Boeing757-200_7		1			183		5777	4.68
+  		Boeing757-200_8		1			183		5777	4.68
+  		Boeing757-300_1		1			222		6290	5.19
+  		Boeing757-300_2 	1			222		6290	5.19
+  		Boeing767-300_1		1			262		11090	5.87
+  		Boeing767-300_2		1			262		11090	5.87
+  		Boeing767-300_3		1			262		11090	5.87
+  		Boeing767-300_4		1			262		11090	5.87;	
   		
 # Kostnaður á flug til Íslands
 set flugVerd := Anchorage Baltimore Boston Chicago 
@@ -52,3 +66,4 @@ param:            kostn :=
 	Seattle       410
 	Tampa         335 
 	Washington    310 ;
+  
