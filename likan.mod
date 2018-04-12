@@ -5,6 +5,7 @@ set flug;
 param flugnr{flug};
 param eftirs{flug} >= 0;
 param fjarlkm{flug};
+param flugverd{flug};
 
 param virdiEld; 	# Markaðsvirði eldsneytis á gallon
 
@@ -25,7 +26,7 @@ param kostn{flugVerd};
 var velFlaug {flug,velar} binary;
 
 # Markfall
-minimize mestiSparnaður: sum {i in flug, j in velar} 
+maximize mestiSparnaður: sum {i in flug, j in velar} 
 	virdiEld  * velFlaug[i,j] * (fjarlkm[i] * fuel[j])/gallEldVegur ;
 
 subject to eftirspurn {i in flug, j in velar}:

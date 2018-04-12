@@ -9,19 +9,19 @@ set flug := Boston Chicago Denver NewYork Orlando
 			Baltimore Cleveland Dallas;
 			  
 # Áfangastaður, flugnúmer, eftirspurn, fjarlægð
-param: 				flugnr    eftirs	  fjarlkm :=
-      	Boston	    630	      156	      3871
-      	Chicago	    852	      130	      4720
-      	Denver	    670	      122	      5757
-      	NewYork	    614	      188	      4161
-      	Orlando	    688	      102	      5687
-      	Seattle	    680	      164	      5799
-      	Tampa	    885	      98	      5789
-      	Washington	644	      173	      4491
-      	Anchorage	679	      100	      5414
-      	Baltimore 	642	      189	      4425
-      	Cleveland	836	      98	      4510
-      	Dallas	    872	      232	      6009 ;
+param: 				flugnr    eftirs	  fjarlkm	flugverd :=
+      	Boston	    630	      156	      3871		400
+      	Chicago	    852	      130	      4720		330
+      	Denver	    670	      122	      5757		290
+      	NewYork	    614	      188	      4161		340
+      	Orlando	    688	      102	      5687		400
+      	Seattle	    680	      164	      5799		410
+      	Tampa	    885	      98	      5789		380
+      	Washington	644	      173	      4491		300
+      	Anchorage	679	      100	      5414		330
+      	Baltimore 	642	      189	      4425		410
+      	Cleveland	836	      98	      4510		335
+      	Dallas	    872	      232	      6009 		310;
 
 
 # Tegund véla
@@ -32,23 +32,5 @@ param: 		 			floti	    sæti	range	fuel  :=
   		Boeing737MAX  	2			160		5110	3.39
   		Boeing757-200 	8			183		5777	4.68
   		Boeing757-300 	2			222		6290	5.19
-  		Boeing767-300 	4			262	11090	5.87;
-  		
-# Kostnaður á flug til Íslands
-set flugVerd := Anchorage Baltimore Boston Chicago 
-				Cleveland Dallas Denver NewYork 
-				Orlando Seattle Tampa Washington; 
+  		Boeing767-300 	4			262		11090	5.87; 
 				   
-param:            kostn :=
-	Anchorage     400 
-	Baltimore     330 
-	Boston        290
-	Chicago       340
-	Cleveland     400 
-	Dallas        410 
-	Denver        380 
-	NewYork       300
-	Orlando       330
-	Seattle       410
-	Tampa         335 
-	Washington    310 ;
