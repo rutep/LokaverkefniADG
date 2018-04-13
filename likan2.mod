@@ -9,7 +9,7 @@ param flugverd{flug};
 
 param virdiEld; 	# Markaðsvirði eldsneytis á gallon
 
-param gallEldVegur; # Gallon af eldsneyti vegur
+param gallonVegur; # Gallon af eldsneyti vegur
 
 					# Laus sæti í flugvél og fjöldi lausra flugvéla
 set velar;
@@ -26,9 +26,8 @@ param kostn{flugVerd};
 var velFlaug {flug,velar} binary;
 
 # Markfall
-minimize mestiSparnaður: sum {i in flug, j in velar}
-	velFlaug[i,j] * ( virdiEld  *  fjarlkm[i] * fuel[j]/gallEldVegur) ; 
-	##velFlaug[i,j] * (flugverd[i] * eftirs[i] - virdiEld  *  fjarlkm[i] * fuel[j]/gallEldVegur) ; 
+maximize mestiSparnaður: sum {i in flug, j in velar}
+	velFlaug[i,j] * (flugverd[i] * eftirs[i] - virdiEld  *  fjarlkm[i] * fuel[j]/gallonVegur) ; 
 
 subject to eftirspurn {i in flug, j in velar}:
 	eftirs[i] * velFlaug[i,j] <= sæti[j];

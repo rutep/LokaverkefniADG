@@ -1,0 +1,8 @@
+reset;
+option solver cplex;
+model likan2.mod;
+data gogn.dat;
+solve;
+display velFlaug;
+display {i in flug} eftirs[i]*flugverd[i];
+reset;
