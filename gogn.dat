@@ -11,7 +11,7 @@ param: 				flugnr    eftirs	  fjarlkm	flugverd :=
       	Boston	    630	      156	      3871		400
       	Chicago	    852	      130	      4720		330
       	Denver	    670	      122	      5757		290
-      	NewYork	    614	      188	      4161		340
+      	New York	    614	      188	      4161		340
       	Orlando	    688	      102	      5687		400
       	Seattle	    680	      164	      5799		410
       	Tampa	    885	      98	      5789		380
