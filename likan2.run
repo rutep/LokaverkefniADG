@@ -4,5 +4,6 @@ model likan2.mod;
 data gogn.dat;
 solve;
 display velFlaug;
-display {i in flug} eftirs[i]*flugverd[i];
+display {i in flug} sum {j in velar}
+	velFlaug[i,j] * (flugverd[i] * eftirs[i] - virdiEld  *  fjarlkm[i] * fuel[j]/gallonVegur) ;
 reset;
