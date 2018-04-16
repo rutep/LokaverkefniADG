@@ -26,6 +26,10 @@ var velFlaug {flug,velar} binary;
 minimize BensínEyðslu: sum {i in flug, j in velar} 
 	(virdiEld  * velFlaug[i,j]) * ((fjarlkm[i] * fuel[j])/gallonVegur) ;
 
+# Markfall - til þess að hámarka hagnað fyrir seld sæti
+# maximize gróða: sum {i in flug, j in velar}
+#	velFlaug[i,j] * (flugverd[i] * eftirs[i] - virdiEld  *  fjarlkm[i] * fuel[j]/gallonVegur) ; 
+
 	###	Skorður	###
 
 subject to svarViðEftirspurn {i in flug, j in velar}:
@@ -37,7 +41,7 @@ subject to vélVerðurAðDrífa {i in flug, j in velar}:
 subject to flotaSkorða {j in velar}:
 	sum {i in flug} velFlaug[i,j] <= floti[j];
 	
-subject to borgarSkorða {i in flug}:
+subject to verðurAðFljúga {i in flug}:
 	sum {j in velar} velFlaug[i,j] == 1;
 	
 
